@@ -167,7 +167,7 @@ public class OrbitCamera : MonoBehaviour
         Vector3 move = Vector3.zero;
 
         //This is a very roundabout way of going about it, and it isn't the best, but it works
-        if (transform.localEulerAngles.y < 45 && transform.localEulerAngles.y > -45)
+        if (transform.localEulerAngles.y < 45 && transform.localEulerAngles.y > 0 || (transform.localEulerAngles.y > 315 && transform.localEulerAngles.y < 360))
         {
             move = new Vector3(pos.x * dragSpeed * Time.deltaTime, 0, pos.y * dragSpeed * Time.deltaTime);
         }
