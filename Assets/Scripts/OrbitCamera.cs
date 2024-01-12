@@ -15,7 +15,7 @@ public class OrbitCamera : MonoBehaviour
     //Active = The player has recently interacted, and can move about the model freely
     private enum State { Idle, Active }
     [SerializeField] private State state;
-    
+
     //The camera component
     private Camera cam;
 
@@ -152,6 +152,7 @@ public class OrbitCamera : MonoBehaviour
     //The code for moving the camera
     private void Move()
     {
+        if (transform.localEulerAngles.y >= 360 || transform.localEulerAngles.y <= -360) transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 0, transform.localEulerAngles.z);
         //Get a tap
         if (Input.GetMouseButtonDown(0))
         {
@@ -163,7 +164,26 @@ public class OrbitCamera : MonoBehaviour
 
         //Move the camera
         Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-        Vector3 move = new Vector3(pos.x * dragSpeed * Time.deltaTime, 0, pos.y * dragSpeed * Time.deltaTime);
+        Vector3 move = Vector3.zero;
+
+        //This is a very roundabout way of going about it, and it isn't the best, but it works
+        if (transform.localEulerAngles.y < 45 && transform.localEulerAngles.y > -45)
+        {
+            move = new Vector3(pos.x * dragSpeed * Time.deltaTime, 0, pos.y * dragSpeed * Time.deltaTime);
+        }
+        else if (transform.localEulerAngles.y > 135 && transform.localEulerAngles.y < 225)
+        {
+            move = new Vector3(-pos.x * dragSpeed * Time.deltaTime, 0, -pos.y * dragSpeed * Time.deltaTime);
+        }
+        else if (transform.localEulerAngles.y > 45 && transform.localEulerAngles.y < 135)
+        {
+            move = new Vector3(pos.y * dragSpeed * Time.deltaTime, 0, pos.x * dragSpeed * Time.deltaTime);
+        }
+        else if (transform.localEulerAngles.y > 225 && transform.localEulerAngles.y < 315)
+        {
+            move = new Vector3(-pos.y * dragSpeed * Time.deltaTime, 0, -pos.x * dragSpeed * Time.deltaTime);
+        }
+
         transform.Translate(move, Space.World);
     }
 
@@ -187,12 +207,13 @@ public class OrbitCamera : MonoBehaviour
             cam.fieldOfView = startFov;
 
         }
-        else if (newState == State.Active){
+        else if (newState == State.Active)
+        {
             ResetTimer();
 
             //Save the rotation angles
-            rotationX = -transform.rotation.eulerAngles.y; 
-            rotationY = transform.rotation.eulerAngles.x; 
+            rotationX = -transform.rotation.eulerAngles.y;
+            rotationY = transform.rotation.eulerAngles.x;
         }
     }
 }
