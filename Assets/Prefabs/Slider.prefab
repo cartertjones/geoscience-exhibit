@@ -181,6 +181,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monthText: {fileID: 8077517071593499953}
   sliderFill: {fileID: 6003694489571320217}
+  colors:
+  - serializedVersion: 2
+    rgba: 4278588457
+  - serializedVersion: 2
+    rgba: 4279578952
+  - serializedVersion: 2
+    rgba: 4280695885
+  - serializedVersion: 2
+    rgba: 4279933039
+  - serializedVersion: 2
+    rgba: 4280669859
+  - serializedVersion: 2
+    rgba: 4280934556
+  - serializedVersion: 2
+    rgba: 4281786496
+  - serializedVersion: 2
+    rgba: 4281922398
+  - serializedVersion: 2
+    rgba: 4280149313
+  - serializedVersion: 2
+    rgba: 4278629399
+  - serializedVersion: 2
+    rgba: 4279157194
+  - serializedVersion: 2
+    rgba: 4280106343
 --- !u!1 &4431318225547602409
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +556,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 20.403809}
+  m_margin: {x: -30.040283, y: 0, z: -32.398438, w: 20.403809}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
