@@ -19,8 +19,6 @@ public class AnotherTest : MonoBehaviour
         render.material = newMat;
 
         // Sets the secondary albedo to the first texture in the index
-        render.material.EnableKeyword("_DetailAlbedoMap");
-        render.material.SetTexture("_DetailAlbedoMap", textures[0]);
     }
 
     // Updates texture based on passthrough of index assaigned to a slider change value
@@ -28,7 +26,7 @@ public class AnotherTest : MonoBehaviour
     {
         int temp = index.ConvertTo<Int32>();
 
-        newMat.SetTexture("_DetailAlbedoMap", textures[temp - 1]);
+        newMat.mainTexture = textures[temp - 1];
         render.material = newMat;
     }
 
