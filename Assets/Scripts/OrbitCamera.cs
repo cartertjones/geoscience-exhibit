@@ -13,8 +13,8 @@ public class OrbitCamera : MonoBehaviour
     //Used to manage if the player has recently interacted
     //Idle = The player has not recently interacted, orbit around the model
     //Active = The player has recently interacted, and can move about the model freely
-    private enum State { Idle, Active }
-    [SerializeField] private State state;
+    public enum State { Idle, Active }
+    public State state;
 
     //The camera component
     private Camera cam;
@@ -143,13 +143,13 @@ public class OrbitCamera : MonoBehaviour
         state = newState;
 
         if (newState == State.Idle)
-        {   
+        {
             //Reset the position
             transform.position = startPosition;
 
             //Reset the FOV
             cam.fieldOfView = startFov;
-            
+
             //Look at the orbit target right away
             transform.LookAt(orbitTarget.position);
         }

@@ -12,7 +12,7 @@ public class SliderScript : MonoBehaviour
     private Slider slider;
     [SerializeField] private Image sliderFill;
 
-    private string[] dates = { "2021-03-17","2021-03-27","2021-04-12","2021-04-23","2021-05-11","2021-05-26","2021-06-08","2021-06-23","2021-07-23","2021-08-10","2021-09-03","2021-09-30" };
+    private string[] dates = { "2021-03-17","2021-03-27","2021-04-12","2021-04-23","2021-05-11","2021-05-26","2021-06-08","2021-06-23","2021-07-23","2021-08-10","2021-09-03","2021-09-30"};
     private Color32[] colors = { new Color32(100, 20, 20, 255), new Color32(100, 50, 20, 255), new Color32(10, 100, 20, 255), new Color32(10, 150, 20, 255), new Color32(10, 255, 20, 255), new Color32(10, 150, 20, 255), new Color32(10, 100, 20, 255), new Color32(100, 50, 20, 255), new Color32(100, 20, 20, 255) };
 
     void Start()
