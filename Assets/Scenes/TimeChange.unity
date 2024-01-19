@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 6652083180501967727, guid: 74bd9b36a43e11f4fbe0c0d2ec06bcd8, type: 3}
+      propertyPath: sceneToLoad
+      value: MainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 6987669148673585668, guid: 74bd9b36a43e11f4fbe0c0d2ec06bcd8, type: 3}
       propertyPath: orbitCamera
       value: 
