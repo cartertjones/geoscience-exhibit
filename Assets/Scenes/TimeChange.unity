@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.49140644, g: 0.53831977, b: 0.57288593, a: 1}
+  m_IndirectSpecularColor: {r: 0.49124902, g: 0.5384356, b: 0.5725762, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,6 +134,10 @@ PrefabInstance:
     - target: {fileID: 5571513857205248779, guid: 74bd9b36a43e11f4fbe0c0d2ec06bcd8, type: 3}
       propertyPath: m_Name
       value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6652083180501967727, guid: 74bd9b36a43e11f4fbe0c0d2ec06bcd8, type: 3}
+      propertyPath: sceneToLoad
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6987669148673585668, guid: 74bd9b36a43e11f4fbe0c0d2ec06bcd8, type: 3}
       propertyPath: orbitCamera
