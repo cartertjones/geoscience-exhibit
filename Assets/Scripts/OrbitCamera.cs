@@ -46,6 +46,8 @@ public class OrbitCamera : MonoBehaviour
     [Header("Rotation")]
     //How quickly the camera rotates
     [SerializeField] private float rotateSpeed = 10;
+    private Vector3 rotationOrigin;
+    private Vector2 rotationDirection;
 
     //Used for manually controlling rotation
     private float rotationX = 0f;
@@ -119,6 +121,28 @@ public class OrbitCamera : MonoBehaviour
     //The code for zooming in and out
     private void Zoom()
     {
+        //Mobile
+        if (Input.touchCount == 2)
+        {
+            // Store both touches.
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
+
+            // Find the position in the previous frame of each touch.
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            // Find the magnitude of the vector (the distance) between the touches in each frame.
+            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+            // Find the difference in the distances between each frame.
+            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+            cam.fieldOfView += (deltaMagnitudeDiff * zoomSpeed) / 50;
+            cam.fieldOfView = Mathf.Clamp(cam.fieldOfView, zoomCapLow, zoomCapHigh);
+        }
+
         //Zoom with the scrollwheel
         float scrollWheelChange = Input.GetAxis("Mouse ScrollWheel");
         if (Mathf.Abs(scrollWheelChange) > 0)
@@ -131,60 +155,94 @@ public class OrbitCamera : MonoBehaviour
     }
 
     //The code for rotating the camera
+    //Disabled for demo
     private void Rotate()
     {
+        /*
         if (Input.GetMouseButton(1))
         {
             //Multiplying by the field of view makes it so that when the user is zoomed in further,
             //the rotation is more precise
 
+            #region Mouse
             //Field of view is divided by 10 to make sure rotateSpeed doesn't have to be a really low number
-            rotationX += Input.GetAxis("Mouse X") * rotateSpeed * (cam.fieldOfView / 10);
+
+            //Temporarily commented out for demo, introduces bugs when 
+            //rotationX += Input.GetAxis("Mouse X") * rotateSpeed * (cam.fieldOfView / 10);
+
             rotationY += Input.GetAxis("Mouse Y") * rotateSpeed * (cam.fieldOfView / 10);
+            #endregion
 
             rotationY = Mathf.Clamp(rotationY, rotationCapMin, rotationCapMax);
             transform.localEulerAngles = new Vector3(rotationY, -rotationX, 0);
 
             ResetTimer();
         }
+        */
+        transform.localEulerAngles = new Vector3(45, 0, 0);
     }
 
     //The code for moving the camera
+    //As of right now, moving the camera doesn't work quite as ideally as we would like.
+    //It is the next priority, alongside making it work with mobile.
     private void Move()
     {
-        if (transform.localEulerAngles.y >= 360 || transform.localEulerAngles.y <= -360) transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 0, transform.localEulerAngles.z);
-        //Get a tap
-        if (Input.GetMouseButtonDown(0))
+        //To prevent moving while zooming, rotating, etc.
+        if (Input.touchCount <= 1)
         {
-            dragOrigin = Input.mousePosition;
-            ResetTimer();
-            return;
-        }
-        if (!Input.GetMouseButton(0)) return;
+            transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, 0, transform.localEulerAngles.z);
+            //Get a tap
+            if (Input.touchCount == 1)
+            {
+                if (Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    dragOrigin = Input.GetTouch(0).position - Input.GetTouch(0).deltaPosition;
+                    ResetTimer();
+                    return;
+                }
+            }
 
-        //Move the camera
-        Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-        Vector3 move = Vector3.zero;
+            else if (Input.GetMouseButtonDown(0))
+            {
+                dragOrigin = Input.mousePosition;
+                ResetTimer();
+                return;
+            }
+            if (!Input.GetMouseButton(0)) return;
 
-        //This is a very roundabout way of going about it, and it isn't the best, but it works
-        if (transform.localEulerAngles.y < 45 && transform.localEulerAngles.y > 0 || (transform.localEulerAngles.y > 315 && transform.localEulerAngles.y < 360))
-        {
+            //In case the user holds for longer than the timer duration
+            if (Input.GetMouseButton(0)) ResetTimer();
+
+            //Move the camera
+            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
+            Vector3 move = Vector3.zero;
+
             move = new Vector3(pos.x * dragSpeed * Time.deltaTime, 0, pos.y * dragSpeed * Time.deltaTime);
-        }
-        else if (transform.localEulerAngles.y > 135 && transform.localEulerAngles.y < 225)
-        {
-            move = new Vector3(-pos.x * dragSpeed * Time.deltaTime, 0, -pos.y * dragSpeed * Time.deltaTime);
-        }
-        else if (transform.localEulerAngles.y > 45 && transform.localEulerAngles.y < 135)
-        {
-            move = new Vector3(pos.y * dragSpeed * Time.deltaTime, 0, pos.x * dragSpeed * Time.deltaTime);
-        }
-        else if (transform.localEulerAngles.y > 225 && transform.localEulerAngles.y < 315)
-        {
-            move = new Vector3(-pos.y * dragSpeed * Time.deltaTime, 0, -pos.x * dragSpeed * Time.deltaTime);
+
+            /*
+                    Commented out for demo
+
+                    //This is a very roundabout way of going about it, and it isn't the best, but it works
+                    if (transform.localEulerAngles.y < 45 && transform.localEulerAngles.y > 0 || (transform.localEulerAngles.y > 315 && transform.localEulerAngles.y < 360))
+                    {
+                        move = new Vector3(pos.x * dragSpeed * Time.deltaTime, 0, pos.y * dragSpeed * Time.deltaTime);
+                    }
+                    else if (transform.localEulerAngles.y > 135 && transform.localEulerAngles.y < 225)
+                    {
+                        move = new Vector3(-pos.x * dragSpeed * Time.deltaTime, 0, -pos.y * dragSpeed * Time.deltaTime);
+                    }
+                    else if (transform.localEulerAngles.y > 45 && transform.localEulerAngles.y < 135)
+                    {
+                        move = new Vector3(pos.y * dragSpeed * Time.deltaTime, 0, pos.x * dragSpeed * Time.deltaTime);
+                    }
+                    else if (transform.localEulerAngles.y > 225 && transform.localEulerAngles.y < 315)
+                    {
+                        move = new Vector3(-pos.y * dragSpeed * Time.deltaTime, 0, -pos.x * dragSpeed * Time.deltaTime);
+                    }
+            */
+            transform.Translate(-move, Space.World);
         }
 
-        transform.Translate(move, Space.World);
     }
 
     //Reset the timer
@@ -195,23 +253,25 @@ public class OrbitCamera : MonoBehaviour
     {
         //Update the state
         state = newState;
+        //Reset the position
+        transform.position = startPosition;
 
         if (newState == State.Idle)
         {
-            transform.position = startPosition;
-
-            //Look at the orbit target right away
-            transform.LookAt(orbitTarget.position);
-
             //Reset the FOV
             cam.fieldOfView = startFov;
+            //Look at the orbit target right away
 
+            transform.LookAt(orbitTarget.position);
         }
         else if (newState == State.Active)
         {
             ResetTimer();
-
             //Save the rotation angles
+
+            Vector3 lookrot = new Vector3(45, 0, 0);
+            transform.localEulerAngles = lookrot;
+
             rotationX = -transform.rotation.eulerAngles.y;
             rotationY = transform.rotation.eulerAngles.x;
         }
