@@ -78,6 +78,8 @@ public class OrbitCamera : MonoBehaviour
             //Run the code for the timer, zooming, rotating, and moving
             Timer();
             Zoom();
+
+            if (Input.GetMouseButton(0)) ResetTimer();
         }
     }
 
