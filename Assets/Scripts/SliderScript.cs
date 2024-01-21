@@ -18,7 +18,7 @@ public class SliderScript : MonoBehaviour
     void Start()
     {
         slider = gameObject.GetComponent<Slider>();
-        slider.maxValue = dates.Length;
+        slider.maxValue = dates.Length - 1;
         monthText.text = dates[0];
         sliderFill.color = colors[0];
         slider.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
@@ -28,7 +28,7 @@ public class SliderScript : MonoBehaviour
     public void ValueChangeCheck()
     {
         int value = (int)slider.value;
-        monthText.text = dates[value - 1];
-        sliderFill.color = colors[value - 1];
+        monthText.text = dates[value];
+        sliderFill.color = colors[value];
     }
 }

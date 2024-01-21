@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 public class AnotherTest : MonoBehaviour
@@ -24,10 +24,10 @@ public class AnotherTest : MonoBehaviour
     // Updates texture based on passthrough of index assaigned to a slider change value
     public void UpdateTexture(Single index)
     {
-        int temp = index.ConvertTo<Int32>();
+        //int temp = index.ConvertTo<Int32>();
 
-        newMat.mainTexture = textures[temp - 1];
-        render.material = newMat;
+        //newMat.mainTexture = textures[temp - 1];
+        //render.material = newMat;
     }
 
 }
