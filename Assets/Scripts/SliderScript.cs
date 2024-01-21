@@ -18,7 +18,7 @@ public class SliderScript : MonoBehaviour
     [SerializeField] private Color32[] colors;
 
     [SerializeField] GameObject infoBlock;
-
+    [SerializeField] Animator blockAnim;
     void Start()
     {
         slider = gameObject.GetComponent<Slider>();
@@ -45,13 +45,6 @@ public class SliderScript : MonoBehaviour
 
     public void ToggleInfoBlock()
     {
-        if (infoBlock.activeSelf)
-        {
-            infoBlock.SetActive(false);
-        }
-        else
-        {
-            infoBlock.SetActive(true);
-        }
+        blockAnim.SetTrigger("Slide");
     }
 }
