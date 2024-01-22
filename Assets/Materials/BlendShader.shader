@@ -27,6 +27,7 @@ Shader "Custom/BlendShader"
         struct Input
         {
             float2 uv_MainTex;
+            float2 uv_OverlayTex;
         };
 
         half _Glossiness;
@@ -44,7 +45,7 @@ Shader "Custom/BlendShader"
         {
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
-            fixed4 overlay = tex2D(_OverlayTex, IN.uv_MainTex);
+            fixed4 overlay = tex2D(_OverlayTex, IN.uv_OverlayTex);
             o.Albedo = lerp(c.rgb, overlay.rgb, _Blend);
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
