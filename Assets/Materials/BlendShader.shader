@@ -46,7 +46,12 @@ Shader "Custom/BlendShader"
             // Albedo comes from a texture tinted by color
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex);
             fixed4 overlay = tex2D(_OverlayTex, IN.uv_OverlayTex);
-            o.Albedo = lerp(c.rgb, overlay.rgb, _Blend);
+    
+            // Check if overlay is close to white and blend accordingly
+            float overlayIsWhite = step(0.96, dot(overlay.rgb, float3(0.3333, 0.3333, 0.3333))); // Adjust 0.95 as needed
+            fixed4 resultColor = lerp(c, overlay, (1 - overlayIsWhite) * _Blend);
+    
+            o.Albedo = resultColor.rgb;
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
