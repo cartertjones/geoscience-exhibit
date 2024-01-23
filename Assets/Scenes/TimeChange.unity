@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.49140644, g: 0.53831977, b: 0.57288593, a: 1}
+  m_IndirectSpecularColor: {r: 0.49124902, g: 0.5384356, b: 0.5725762, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2356,13 +2356,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4693940951227277882}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -90, z: 0}
+  m_LocalScale: {x: 6.5, y: 6.5, z: 6.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3293352252127786351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,7 +2697,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4693940951227277882}
-  m_Mesh: {fileID: 7400340493842828487, guid: 5df008716d80bf54d8cae72b823a3c2b, type: 3}
+  m_Mesh: {fileID: 7400340493842828487, guid: 35743fa79ebbd954792a8b828206d64d, type: 3}
 --- !u!23 &6107462439413245426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2996,13 +2996,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   overlayTextures:
-  - {fileID: 2800000, guid: 58f8fa0eba4d175459c6ca299e41abc6, type: 3}
-  - {fileID: 2800000, guid: 9cc0a44084ded60478cb0afef1194acf, type: 3}
-  - {fileID: 2800000, guid: db7b5fec687303d4db4b58e434c32488, type: 3}
-  - {fileID: 2800000, guid: 392cef2c7cdfa944d9ac23e1cfbb66da, type: 3}
-  - {fileID: 2800000, guid: f3cd067163cac054382b7104dd9d2c78, type: 3}
-  - {fileID: 2800000, guid: 661f41a8211357840bb815dce1a56cdb, type: 3}
-  - {fileID: 2800000, guid: c056dba2bb294df448b704c34d4a87c0, type: 3}
+  - {fileID: 2800000, guid: 052f726ea0652094695c8bbf099de7f0, type: 3}
+  - {fileID: 2800000, guid: ac2ec0f7cf41d35438eb793dd7276898, type: 3}
+  - {fileID: 2800000, guid: fc7814e44a06905499fe2b12f268596c, type: 3}
+  - {fileID: 2800000, guid: 2c7e2b24e6ea8e04e84fc1578afb5f06, type: 3}
+  - {fileID: 2800000, guid: 264ed59d30e6f07488f04e6c3131aaa8, type: 3}
+  - {fileID: 2800000, guid: b614bf0b539b3b7409e32553c71644ff, type: 3}
+  - {fileID: 2800000, guid: d7d47a43134fb004e9d03ac60e88640a, type: 3}
   - {fileID: 2800000, guid: 3a305fb55de33114aaab311af50082a9, type: 3}
   - {fileID: 2800000, guid: f7bd64290a09e1441b92a0ed4de6c7b8, type: 3}
   - {fileID: 2800000, guid: 476e4d33250b0fe41ba1bec476897e82, type: 3}
