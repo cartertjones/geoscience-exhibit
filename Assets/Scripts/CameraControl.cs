@@ -5,6 +5,9 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] private float speed = 40.0f;
+    [SerializeField] private float minX, maxX, minZ, maxZ;
+
+    [Space(5)]
     [SerializeField] private OrbitCamera orbitCamera;
     private bool gyroEnabled;
     private Gyroscope gyro;
@@ -24,7 +27,7 @@ public class CameraControl : MonoBehaviour
 
     private bool EnableGyro()
     {
-        if(SystemInfo.supportsGyroscope)
+        if (SystemInfo.supportsGyroscope)
         {
             gyro = Input.gyro;
             gyro.enabled = true;
@@ -44,7 +47,7 @@ public class CameraControl : MonoBehaviour
             transform.localRotation = gyro.attitude * rot;
         }
 
-        if(lastRot != transform.rotation)
+        if (lastRot != transform.rotation)
         {
             orbitCamera.ResetTimer();
         }
@@ -63,7 +66,16 @@ public class CameraControl : MonoBehaviour
         direction.y = 0; // Remove the Y component to keep movement on the XZ plane
         direction.Normalize(); // Normalize the vector to ensure consistent movement speed
 
+        // Apply movement
         cameraContainer.transform.Translate(direction * speed * Time.deltaTime, Space.World);
+
+        // Clamp the camera's position within specified boundaries
+        Vector3 clampedPosition = cameraContainer.transform.position;
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, minX, maxX);
+        clampedPosition.z = Mathf.Clamp(clampedPosition.z, minZ, maxZ);
+
+        // Apply the clamped position back to the camera
+        cameraContainer.transform.position = clampedPosition;
     }
 
     // Call this method to start moving

@@ -1628,6 +1628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
+  minX: -500
+  maxX: 430
+  minZ: -430
+  maxZ: 430
   orbitCamera: {fileID: 5158781672406441962}
 --- !u!1 &1714401986
 GameObject:
