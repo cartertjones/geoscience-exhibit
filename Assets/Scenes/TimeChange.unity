@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: sceneLoader
       value: 
       objectReference: {fileID: 1615122303}
+    - target: {fileID: 6987669148673585668, guid: 74bd9b36a43e11f4fbe0c0d2ec06bcd8, type: 3}
+      propertyPath: menuReturnTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7465398632283340383, guid: 74bd9b36a43e11f4fbe0c0d2ec06bcd8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2844,7 +2848,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 10000
   field of view: 60
   orthographic: 0
   orthographic size: 5
