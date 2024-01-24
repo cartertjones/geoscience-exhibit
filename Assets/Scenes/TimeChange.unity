@@ -1286,8 +1286,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Data Visualization Overlay
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8542e6a60bf755c4ea996d721e54f24e, type: 2}
-  m_sharedMaterial: {fileID: -5819664770598307748, guid: 8542e6a60bf755c4ea996d721e54f24e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ba084b1cf0adab5409fcac29bbde03de, type: 2}
+  m_sharedMaterial: {fileID: -806167120795349783, guid: ba084b1cf0adab5409fcac29bbde03de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1311,7 +1311,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.7
+  m_fontSize: 43.7
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -5
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1495,8 +1495,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yoyoyo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8542e6a60bf755c4ea996d721e54f24e, type: 2}
-  m_sharedMaterial: {fileID: -5819664770598307748, guid: 8542e6a60bf755c4ea996d721e54f24e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ba084b1cf0adab5409fcac29bbde03de, type: 2}
+  m_sharedMaterial: {fileID: -806167120795349783, guid: ba084b1cf0adab5409fcac29bbde03de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1520,8 +1520,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -5
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3186,8 +3186,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: January
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8542e6a60bf755c4ea996d721e54f24e, type: 2}
-  m_sharedMaterial: {fileID: -5819664770598307748, guid: 8542e6a60bf755c4ea996d721e54f24e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ba084b1cf0adab5409fcac29bbde03de, type: 2}
+  m_sharedMaterial: {fileID: -806167120795349783, guid: ba084b1cf0adab5409fcac29bbde03de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3211,8 +3211,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3221,7 +3221,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -8
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3297,20 +3297,20 @@ MonoBehaviour:
   sliderFill: {fileID: 6003694488594899432}
   plantImageSlot: {fileID: 353304067}
   plantInfo:
-  - Invasive Burr buttercup greens up
-  - Invasive Burr buttercup at peak greenness
+  - Invasive Burr buttercup greens up.
+  - Invasive Burr buttercup at peak greenness.
   - Invasive Burr buttercup begins to brown down, Native bunchgrasses and planted
-    species appear green
+    species appear green.
   - Invasive cheatgrass greens up and Native bunchgrasses and planted species appear
-    green
-  - Invasive cheatgrass at peak greenness
-  - Invasive cheatgrass begins to brown down
-  - Invasive Russian thistle begins to green up
-  - Invasive Russian thistle at peak greenness
-  - Invasive Russian thistle begins to brown down
-  - Invasive Russian thistle and planted species appear green
-  - Invasive Russian thistle and planted species appear green
-  - Invasive Russian thistle and planted species appear green
+    green.
+  - Invasive cheatgrass at peak greenness.
+  - Invasive cheatgrass begins to brown down.
+  - Invasive Russian thistle begins to green up.
+  - Invasive Russian thistle at peak greenness.
+  - Invasive Russian thistle begins to brown down.
+  - Invasive Russian thistle and planted species appear green.
+  - Invasive Russian thistle and planted species appear green.
+  - Invasive Russian thistle and planted species appear green.
   plantImages:
   - {fileID: 21300000, guid: 4b6d7e94d96779349aa80ee5f9643174, type: 3}
   - {fileID: 21300000, guid: 4b6d7e94d96779349aa80ee5f9643174, type: 3}
