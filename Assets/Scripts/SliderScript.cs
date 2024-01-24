@@ -24,6 +24,8 @@ public class SliderScript : MonoBehaviour
     [SerializeField] private Vector3 onScreenPosition; // Position when the block is visible
     private bool isBlockVisible = false;
     [SerializeField] private float moveDuration = 1.0f; // Time of block movement
+    [SerializeField] private Slider infoSlider;
+    [SerializeField] private float[] infoSliderValues;
 
     void Start()
     {
@@ -47,6 +49,7 @@ public class SliderScript : MonoBehaviour
         sliderFill.color = colors[value];
         plantImageSlot.sprite = plantImages[value];
         plantText.text = plantInfo[value];
+        infoSlider.value = infoSliderValues[value];
     }
 
     public void ToggleInfoBlock()
