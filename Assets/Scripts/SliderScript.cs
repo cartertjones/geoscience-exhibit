@@ -23,6 +23,8 @@ public class SliderScript : MonoBehaviour
     [SerializeField] private Vector3 offScreenPosition; // Position when the block is hidden
     [SerializeField] private Vector3 onScreenPosition; // Position when the block is visible
     private bool isBlockVisible = false;
+    [SerializeField] private TextMeshProUGUI iText;
+    [SerializeField] private Color[] iColors;
     [SerializeField] private float moveDuration = 1.0f; // Time of block movement
     [SerializeField] private Slider infoSlider;
     [SerializeField] private float[] infoSliderValues;
@@ -62,6 +64,9 @@ public class SliderScript : MonoBehaviour
         float timeElapsed = 0;
         Vector3 start = isBlockVisible ? onScreenPosition : offScreenPosition;
         Vector3 end = isBlockVisible ? offScreenPosition : onScreenPosition;
+
+        if (isBlockVisible) iText.color = iColors[0];
+        else iText.color = iColors[1];
 
         while (timeElapsed < moveDuration)
         {
