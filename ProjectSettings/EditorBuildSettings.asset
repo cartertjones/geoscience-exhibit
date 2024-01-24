@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TimeChange.unity
-    guid: 5960d4f71d9ccbf48bb726e0bdc933d6
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: fd20fd2b58502c142a891d5dde4d9bf1
+  - enabled: 1
+    path: Assets/Scenes/TimeChange.unity
+    guid: 5960d4f71d9ccbf48bb726e0bdc933d6
   m_configObjects: {}
