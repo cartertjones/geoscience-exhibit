@@ -1947,11 +1947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce787acaab0f7d46a3247eda20a6dc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
-  minX: -350
-  maxX: 350
-  minZ: -470
-  maxZ: 470
+  speed: 50
+  minX: -470
+  maxX: 500
+  minZ: -350
+  maxZ: 350
   orbitCamera: {fileID: 5158781672406441962}
 --- !u!1 &1714401986
 GameObject:
@@ -2554,13 +2554,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4693940951227277882}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -90, z: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -39.42, z: -31}
   m_LocalScale: {x: 6.5, y: 6.5, z: 6.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &3293352252127786351
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,7 +2684,7 @@ Transform:
   m_GameObject: {fileID: 5158781671839409783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 20.3, z: 0}
+  m_LocalPosition: {x: 71, y: -9.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2722,9 +2722,9 @@ MonoBehaviour:
   orbitSpeed: 5
   orbitTarget: {fileID: 5158781671839409782}
   zoomSpeed: 5
-  zoomCapLow: 10
-  zoomCapHigh: 90
-  timeToReturnToIdle: 10
+  zoomCapLow: 40
+  zoomCapHigh: 70
+  timeToReturnToIdle: 7
 --- !u!4 &5158781672406441963
 Transform:
   m_ObjectHideFlags: 0
@@ -2734,7 +2734,7 @@ Transform:
   m_GameObject: {fileID: 5158781672406441966}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -344, y: 111.2, z: 0}
+  m_LocalPosition: {x: -310.7, y: 70.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
