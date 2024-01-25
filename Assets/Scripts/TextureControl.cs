@@ -8,6 +8,8 @@ public class TextureControl : MonoBehaviour
 
     [SerializeField] Renderer render;
 
+    [SerializeField] bool defaultOverlayState = true;
+
     Material newMat;
 
     // Variable to control the blend factor
@@ -25,6 +27,9 @@ public class TextureControl : MonoBehaviour
         // Store the original texture
         originalTexture = (Texture2D)render.material.mainTexture;
         newMat.SetFloat("_Blend", 0);
+
+        // Set initial overlay state, was requiring multiple presses of the toggle to work before
+        ToggleTextureOverlay(defaultOverlayState);
     }
 
     public void OnSliderValueChanged(float value)
