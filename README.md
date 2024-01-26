@@ -45,10 +45,14 @@ insert video and/or pics here
 <h2>Producer</h2>
 
 <h3>Megan Cattau</h3>
-https://www.linkedin.com/in/megan-cattau-a702a231/
+
 https://www.boisestate.edu/hes/people/megan-cattau/
-megancattau@boisestate.edu
-https://github.com/mcattau
+
+
+
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mcattau)
+<a href="mailto:megancattau@boisestate.edu"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a> <a href="https://www.linkedin.com/in/megan-cattau-a702a231/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+ <a href="https://carsonstrout.github.io/"><img src="https://img.shields.io/badge/portfolio-0A0A0A?style=for-the-badge&logo=dev.to&logoColor=white"></a>
 
 <h2>Developers</h2>
 
