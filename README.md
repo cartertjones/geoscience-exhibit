@@ -45,6 +45,9 @@ insert video and/or pics here
 <h2>Producer</h2>
 
 <h3>Megan Cattau</h3>
+https://www.linkedin.com/in/megan-cattau-a702a231/
+https://www.boisestate.edu/hes/people/megan-cattau/
+megancattau@boisestate.edu
 
 <h2>Developers</h2>
 
