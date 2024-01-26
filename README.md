@@ -48,6 +48,7 @@ insert video and/or pics here
 https://www.linkedin.com/in/megan-cattau-a702a231/
 https://www.boisestate.edu/hes/people/megan-cattau/
 megancattau@boisestate.edu
+https://github.com/mcattau
 
 <h2>Developers</h2>
 
