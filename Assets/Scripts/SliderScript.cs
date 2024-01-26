@@ -29,6 +29,11 @@ public class SliderScript : MonoBehaviour
     [SerializeField] private Slider infoSlider;
     [SerializeField] private float[] infoSliderValues;
 
+    [Header("SideKey")]
+    [SerializeField] GameObject key;
+    [SerializeField] private Vector3 offScreenKeyPosition; // Position when the block is hidden
+    [SerializeField] private Vector3 onScreenKeyPosition; // Position when the block is visible
+
     void Start()
     {
         slider = gameObject.GetComponent<Slider>();
@@ -65,12 +70,16 @@ public class SliderScript : MonoBehaviour
         Vector3 start = isBlockVisible ? onScreenPosition : offScreenPosition;
         Vector3 end = isBlockVisible ? offScreenPosition : onScreenPosition;
 
+        Vector3 keyStart = isBlockVisible ? onScreenKeyPosition : offScreenKeyPosition;
+        Vector3 keyEnd = isBlockVisible ? offScreenKeyPosition : onScreenKeyPosition;
+
         if (isBlockVisible) iText.color = iColors[0];
         else iText.color = iColors[1];
 
         while (timeElapsed < moveDuration)
         {
             infoBlock.transform.localPosition = Vector3.Lerp(start, end, timeElapsed / moveDuration);
+            key.transform.localPosition = Vector3.Lerp(keyStart, keyEnd, timeElapsed / moveDuration);
             timeElapsed += Time.deltaTime;
             yield return null;
         }

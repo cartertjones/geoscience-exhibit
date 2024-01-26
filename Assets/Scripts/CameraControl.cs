@@ -76,6 +76,8 @@ public class CameraControl : MonoBehaviour
 
         // Apply the clamped position back to the camera
         cameraContainer.transform.position = clampedPosition;
+
+
     }
 
     // Call this method to start moving
@@ -88,5 +90,11 @@ public class CameraControl : MonoBehaviour
     public void StopMoving()
     {
         isMoving = false;
+    }
+
+    public void ResetCameraContainer()
+    {
+        cameraContainer.transform.position = transform.position;
+        transform.localPosition = Vector3.zero;
     }
 }

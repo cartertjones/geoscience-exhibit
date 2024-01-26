@@ -30,6 +30,7 @@ public class OrbitCamera : MonoBehaviour
 
     //The position of the camera when the program starts
     private Vector3 startPosition;
+    [SerializeField] private GameObject orbitStartPoint;
 
     [Header("Zooming")]
     //Used for zooming
@@ -44,6 +45,8 @@ public class OrbitCamera : MonoBehaviour
     //How much longer until the program goes idle
     private float currentTimer;
 
+    [SerializeField] private CameraControl cameraControl;
+
     #endregion
 
     private void Start()
@@ -52,7 +55,7 @@ public class OrbitCamera : MonoBehaviour
         cam = GetComponent<Camera>();
 
         //Save the start position
-        startPosition = transform.position;
+        startPosition = orbitStartPoint.transform.position;
 
         //Save the start FOV
         startFov = cam.fieldOfView;
@@ -157,6 +160,8 @@ public class OrbitCamera : MonoBehaviour
         }
         else if (newState == State.Active)
         {
+            cameraControl.ResetCameraContainer();
+
             ResetTimer();
         }
     }
