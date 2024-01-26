@@ -44,7 +44,7 @@ insert video and/or pics here
 
 <h2>Producer</h2>
 
-<h3>Megan Cattau</h3>
+<h3>Dr. Megan Cattau</h3>
 
 https://www.boisestate.edu/hes/people/megan-cattau/
 
@@ -109,7 +109,7 @@ https://www.boisestate.edu/hes/people/megan-cattau/
 
 #
 
-<h3>Carson Strout:</h3>
+<h3>Carson Strout</h3>
 <p>Programmer • UI • Data Conversion</p>
 
 [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CarsonStrout)
